@@ -3,7 +3,7 @@ import api from "@/server/axios";
 import { ResponseDto } from "@/lib/Interface/Response";
 import { Utils } from "@/lib/utils/utils";
 
-const BASE_PATH = "http://localhost:8080";
+const BASE_PATH = "https://plf-es-2025-2-ti4-1254100-gestaoeduca.onrender.com";
 
 export async function requisicaoBase<T, E>(
   endpoint: string,
