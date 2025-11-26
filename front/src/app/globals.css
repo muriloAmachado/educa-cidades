@@ -1,0 +1,308 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Cores da marca EDUCA CIDADES */
+:root {
+  /* Cores principais da marca */
+  --educa-primary: 25 25 112; /* Azul escuro RGB(25, 25, 112) */
+  --educa-secondary: 255 140 0; /* Amarelo RGB(255, 140, 0) */
+  --educa-tertiary: 220 20 60; /* Vermelho RGB(220, 20, 60) */
+  --educa-background: 248 250 252; /* Branco acinzentado RGB(248, 250, 252) */
+  
+  /* Variações das cores primárias */
+  --educa-primary-50: 240 240 255;
+  --educa-primary-100: 224 224 255;
+  --educa-primary-200: 199 199 255;
+  --educa-primary-300: 174 174 255;
+  --educa-primary-400: 149 149 255;
+  --educa-primary-500: 124 124 255;
+  --educa-primary-600: 99 99 255;
+  --educa-primary-700: 74 74 255;
+  --educa-primary-800: 49 49 255;
+  --educa-primary-900: 25 25 112;
+  
+  /* Variações do amarelo */
+  --educa-secondary-50: 255 251 240;
+  --educa-secondary-100: 255 247 224;
+  --educa-secondary-200: 255 243 199;
+  --educa-secondary-300: 255 239 174;
+  --educa-secondary-400: 255 235 149;
+  --educa-secondary-500: 255 140 0;
+  --educa-secondary-600: 230 126 0;
+  --educa-secondary-700: 204 112 0;
+  --educa-secondary-800: 179 98 0;
+  --educa-secondary-900: 153 84 0;
+  
+  /* Variações do vermelho */
+  --educa-tertiary-50: 255 240 245;
+  --educa-tertiary-100: 255 224 235;
+  --educa-tertiary-200: 255 199 215;
+  --educa-tertiary-300: 255 174 195;
+  --educa-tertiary-400: 255 149 175;
+  --educa-tertiary-500: 220 20 60;
+  --educa-tertiary-600: 198 18 54;
+  --educa-tertiary-700: 176 16 48;
+  --educa-tertiary-800: 154 14 42;
+  --educa-tertiary-900: 132 12 36;
+  
+  /* Cor Mostarda */
+  --educa-mustard: 218 165 32; /* Tom de mostarda RGB(218, 165, 32) */
+}
+
+html {
+  font-size: 18px; /* define o tamanho base */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  
+  /* Tema claro com cores da marca EDUCA CIDADES */
+  --background: rgb(var(--educa-background)); /* Branco acinzentado */
+  --foreground: rgb(var(--educa-primary)); /* Azul escuro para texto */
+  --card: rgb(255 255 255); /* Branco puro para cards */
+  --card-foreground: rgb(var(--educa-primary));
+  --popover: rgb(255 255 255);
+  --popover-foreground: rgb(var(--educa-primary));
+  --primary: rgb(var(--educa-primary)); /* Azul escuro como cor primária */
+  --primary-foreground: rgb(255 255 255); /* Branco para texto sobre azul */
+  --secondary: rgb(var(--educa-secondary)); /* Amarelo/Laranja como cor secundária */
+  --secondary-foreground: rgb(255 255 255); /* Branco para texto sobre laranja */
+  --muted: rgb(248 250 252); /* Branco acinzentado para elementos muted */
+  --muted-foreground: rgb(100 116 139); /* Cinza para texto muted */
+  --accent: rgb(var(--educa-mustard)); /* Mostarda como cor de destaque */
+  --accent-foreground: rgb(255 255 255); /* Branco para texto sobre mostarda */
+  --destructive: rgb(var(--educa-tertiary)); /* Vermelho para ações destrutivas */
+  --destructive-foreground: rgb(255 255 255);
+  --border: rgb(226 232 240); /* Cinza claro para bordas */
+  --input: rgb(226 232 240); /* Cinza claro para inputs */
+  --ring: rgb(var(--educa-primary)); /* Azul escuro para focus ring */
+  
+  /* Cores para gráficos usando a paleta da marca */
+  --chart-1: rgb(var(--educa-primary)); /* Azul escuro */
+  --chart-2: rgb(var(--educa-secondary)); /* Amarelo */
+  --chart-3: rgb(var(--educa-tertiary)); /* Vermelho */
+  --chart-4: rgb(99 102 241); /* Azul médio para contraste */
+  --chart-5: rgb(16 185 129); /* Verde para contraste */
+  
+  /* Sidebar com cores da marca */
+  --sidebar: rgb(255 255 255); /* Branco para sidebar */
+  --sidebar-foreground: rgb(var(--educa-primary));
+  --sidebar-primary: rgb(var(--educa-primary));
+  --sidebar-primary-foreground: rgb(255 255 255);
+  --sidebar-accent: rgb(var(--educa-secondary-300)); /* Amarelo claro para hover e clique */
+  --sidebar-accent-foreground: rgb(var(--educa-primary));
+  --sidebar-border: rgb(226 232 240);
+  --sidebar-ring: rgb(var(--educa-primary));
+}
+
+.dark {
+  /* Tema escuro com cores da marca EDUCA CIDADES */
+  --background: rgb(15 23 42); /* Azul escuro muito escuro para fundo */
+  --foreground: rgb(248 250 252); /* Branco acinzentado para texto */
+  --card: rgb(30 41 59); /* Azul escuro para cards */
+  --card-foreground: rgb(248 250 252);
+  --popover: rgb(30 41 59);
+  --popover-foreground: rgb(248 250 252);
+  --primary: rgb(var(--educa-secondary)); /* Amarelo como cor primária no tema escuro */
+  --primary-foreground: rgb(var(--educa-primary)); /* Azul escuro para texto sobre amarelo */
+  --secondary: rgb(var(--educa-primary)); /* Azul escuro como cor secundária */
+  --secondary-foreground: rgb(248 250 252); /* Branco acinzentado para texto sobre azul */
+  --muted: rgb(51 65 85); /* Azul escuro para elementos muted */
+  --muted-foreground: rgb(148 163 184); /* Cinza claro para texto muted */
+  --accent: rgb(var(--educa-tertiary)); /* Vermelho como cor de destaque */
+  --accent-foreground: rgb(255 255 255); /* Branco para texto sobre vermelho */
+  --destructive: rgb(var(--educa-tertiary)); /* Vermelho para ações destrutivas */
+  --destructive-foreground: rgb(255 255 255);
+  --border: rgb(51 65 85); /* Azul escuro para bordas */
+  --input: rgb(51 65 85); /* Azul escuro para inputs */
+  --ring: rgb(var(--educa-secondary)); /* Amarelo para focus ring */
+  
+  /* Cores para gráficos no tema escuro */
+  --chart-1: rgb(var(--educa-secondary)); /* Amarelo */
+  --chart-2: rgb(var(--educa-primary)); /* Azul escuro */
+  --chart-3: rgb(var(--educa-tertiary)); /* Vermelho */
+  --chart-4: rgb(99 102 241); /* Azul médio */
+  --chart-5: rgb(16 185 129); /* Verde */
+  
+  /* Sidebar no tema escuro */
+  --sidebar: rgb(15 23 42); /* Azul escuro muito escuro */
+  --sidebar-foreground: rgb(248 250 252);
+  --sidebar-primary: rgb(var(--educa-secondary)); /* Amarelo para itens ativos */
+  --sidebar-primary-foreground: rgb(var(--educa-primary));
+  --sidebar-accent: rgb(30 41 59);
+  --sidebar-accent-foreground: rgb(248 250 252);
+  --sidebar-border: rgb(51 65 85);
+  --sidebar-ring: rgb(var(--educa-secondary));
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Classes utilitárias para as cores da marca EDUCA CIDADES */
+@layer utilities {
+  /* Cores primárias */
+  .bg-educa-primary { background-color: rgb(var(--educa-primary)); }
+  .text-educa-primary { color: rgb(var(--educa-primary)); }
+  .border-educa-primary { border-color: rgb(var(--educa-primary)); }
+  
+  /* Cores secundárias */
+  .bg-educa-secondary { background-color: rgb(var(--educa-secondary)); }
+  .text-educa-secondary { color: rgb(var(--educa-secondary)); }
+  .border-educa-secondary { border-color: rgb(var(--educa-secondary)); }
+  
+  /* Cores terciárias */
+  .bg-educa-tertiary { background-color: rgb(var(--educa-tertiary)); }
+  .text-educa-tertiary { color: rgb(var(--educa-tertiary)); }
+  .border-educa-tertiary { border-color: rgb(var(--educa-tertiary)); }
+  
+  /* Cor de fundo da marca */
+  .bg-educa-background { background-color: rgb(var(--educa-background)); }
+  
+  /* Variações das cores primárias */
+  .bg-educa-primary-50 { background-color: rgb(var(--educa-primary-50)); }
+  .bg-educa-primary-100 { background-color: rgb(var(--educa-primary-100)); }
+  .bg-educa-primary-200 { background-color: rgb(var(--educa-primary-200)); }
+  .bg-educa-primary-300 { background-color: rgb(var(--educa-primary-300)); }
+  .bg-educa-primary-400 { background-color: rgb(var(--educa-primary-400)); }
+  .bg-educa-primary-500 { background-color: rgb(var(--educa-primary-500)); }
+  .bg-educa-primary-600 { background-color: rgb(var(--educa-primary-600)); }
+  .bg-educa-primary-700 { background-color: rgb(var(--educa-primary-700)); }
+  .bg-educa-primary-800 { background-color: rgb(var(--educa-primary-800)); }
+  .bg-educa-primary-900 { background-color: rgb(var(--educa-primary-900)); }
+  
+  /* Variações das cores secundárias */
+  .bg-educa-secondary-50 { background-color: rgb(var(--educa-secondary-50)); }
+  .bg-educa-secondary-100 { background-color: rgb(var(--educa-secondary-100)); }
+  .bg-educa-secondary-200 { background-color: rgb(var(--educa-secondary-200)); }
+  .bg-educa-secondary-300 { background-color: rgb(var(--educa-secondary-300)); }
+  .bg-educa-secondary-400 { background-color: rgb(var(--educa-secondary-400)); }
+  .bg-educa-secondary-500 { background-color: rgb(var(--educa-secondary-500)); }
+  .bg-educa-secondary-600 { background-color: rgb(var(--educa-secondary-600)); }
+  .bg-educa-secondary-700 { background-color: rgb(var(--educa-secondary-700)); }
+  .bg-educa-secondary-800 { background-color: rgb(var(--educa-secondary-800)); }
+  .bg-educa-secondary-900 { background-color: rgb(var(--educa-secondary-900)); }
+  
+  /* Variações das cores terciárias */
+  .bg-educa-tertiary-50 { background-color: rgb(var(--educa-tertiary-50)); }
+  .bg-educa-tertiary-100 { background-color: rgb(var(--educa-tertiary-100)); }
+  .bg-educa-tertiary-200 { background-color: rgb(var(--educa-tertiary-200)); }
+  .bg-educa-tertiary-300 { background-color: rgb(var(--educa-tertiary-300)); }
+  .bg-educa-tertiary-400 { background-color: rgb(var(--educa-tertiary-400)); }
+  .bg-educa-tertiary-500 { background-color: rgb(var(--educa-tertiary-500)); }
+  .bg-educa-tertiary-600 { background-color: rgb(var(--educa-tertiary-600)); }
+  .bg-educa-tertiary-700 { background-color: rgb(var(--educa-tertiary-700)); }
+  .bg-educa-tertiary-800 { background-color: rgb(var(--educa-tertiary-800)); }
+  .bg-educa-tertiary-900 { background-color: rgb(var(--educa-tertiary-900)); }
+  
+  /* Classes para texto com as cores da marca */
+  .text-educa-primary-50 { color: rgb(var(--educa-primary-50)); }
+  .text-educa-primary-100 { color: rgb(var(--educa-primary-100)); }
+  .text-educa-primary-200 { color: rgb(var(--educa-primary-200)); }
+  .text-educa-primary-300 { color: rgb(var(--educa-primary-300)); }
+  .text-educa-primary-400 { color: rgb(var(--educa-primary-400)); }
+  .text-educa-primary-500 { color: rgb(var(--educa-primary-500)); }
+  .text-educa-primary-600 { color: rgb(var(--educa-primary-600)); }
+  .text-educa-primary-700 { color: rgb(var(--educa-primary-700)); }
+  .text-educa-primary-800 { color: rgb(var(--educa-primary-800)); }
+  .text-educa-primary-900 { color: rgb(var(--educa-primary-900)); }
+  
+  /* Classes para bordas com as cores da marca */
+  .border-educa-primary-50 { border-color: rgb(var(--educa-primary-50)); }
+  .border-educa-primary-100 { border-color: rgb(var(--educa-primary-100)); }
+  .border-educa-primary-200 { border-color: rgb(var(--educa-primary-200)); }
+  .border-educa-primary-300 { border-color: rgb(var(--educa-primary-300)); }
+  .border-educa-primary-400 { border-color: rgb(var(--educa-primary-400)); }
+  .border-educa-primary-500 { border-color: rgb(var(--educa-primary-500)); }
+  .border-educa-primary-600 { border-color: rgb(var(--educa-primary-600)); }
+  .border-educa-primary-700 { border-color: rgb(var(--educa-primary-700)); }
+  .border-educa-primary-800 { border-color: rgb(var(--educa-primary-800)); }
+  .border-educa-primary-900 { border-color: rgb(var(--educa-primary-900)); }
+}
+
+@layer base {
+  [data-sonner-toast][data-type="success"] {
+    background-color: rgb(255 255 255) !important;
+    color: rgb(25 25 112) !important;
+    border-color: rgb(20 184 166) !important;
+    border-width: 2px !important;
+  }
+
+  [data-sonner-toast][data-type="success"] [data-icon] {
+    color: rgb(20 184 166) !important;
+  }
+
+  [data-sonner-toast][data-type="success"] [data-title] {
+    color: rgb(25 25 112) !important;
+  }
+
+  [data-sonner-toast][data-type="success"] [data-description] {
+    color: rgb(100 116 139) !important;
+  }
+
+  [data-sonner-toast][data-type="error"] {
+    background-color: rgb(255 255 255) !important;
+    color: rgb(25 25 112) !important;
+    border-color: rgb(220 20 60) !important;
+    border-width: 2px !important;
+  }
+
+  [data-sonner-toast][data-type="error"] [data-icon] {
+    color: rgb(220 20 60) !important;
+  }
+
+  [data-sonner-toast][data-type="error"] [data-title] {
+    color: rgb(25 25 112) !important;
+  }
+
+  [data-sonner-toast][data-type="error"] [data-description] {
+    color: rgb(100 116 139) !important;
+  }
+}
