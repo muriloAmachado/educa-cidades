@@ -59,8 +59,8 @@ export default function ListaComentario({
     try {
       const url =
         tipo === "projeto"
-          ? `http://localhost:8080/api/comentario/projeto/${estruturaId}/comentarios`
-          : `http://localhost:8080/api/comentario/tarefa/${estruturaId}/comentarios`;
+          ? `https://plf-es-2025-2-ti4-1254100-gestaoeduca.onrender.com/api/comentario/projeto/${estruturaId}/comentarios`
+          : `https://plf-es-2025-2-ti4-1254100-gestaoeduca.onrender.com/api/comentario/tarefa/${estruturaId}/comentarios`;
 
       const res = await axios.get<ComentarioResponseDTO[]>(url, auth);
 
@@ -102,7 +102,7 @@ export default function ListaComentario({
 
     try {
       const res = await axios.post<ComentarioResponseDTO>(
-        "http://localhost:8080/api/comentario",
+        "https://plf-es-2025-2-ti4-1254100-gestaoeduca.onrender.com/api/comentario",
         dto,
         auth
       );
@@ -111,7 +111,7 @@ export default function ListaComentario({
 
       if (role === "Externo" ) {
         const resPatch = await axios.patch<ComentarioResponseDTO>(
-          `http://localhost:8080/api/comentario/${comentarioCriado.id}`,
+          `https://plf-es-2025-2-ti4-1254100-gestaoeduca.onrender.com/api/comentario/${comentarioCriado.id}`,
           {},
           auth
         );
@@ -160,7 +160,7 @@ export default function ListaComentario({
     };
 
     try {
-      await axios.put(`http://localhost:8080/api/comentario/${id}`, dto, auth);
+      await axios.put(`https://plf-es-2025-2-ti4-1254100-gestaoeduca.onrender.com/api/comentario/${id}`, dto, auth);
       setEditandoId(null);
       setTexto("");
       carregar();
@@ -179,7 +179,7 @@ export default function ListaComentario({
     if (!isAdmin && comentario.usuario?.id !== usuarioId) return;
 
     try {
-      await axios.delete(`http://localhost:8080/api/comentario/${id}`, auth);
+      await axios.delete(`https://plf-es-2025-2-ti4-1254100-gestaoeduca.onrender.com/api/comentario/${id}`, auth);
       carregar();
     } catch (error) {
       console.error("Erro ao deletar comentário:", error);
@@ -194,7 +194,7 @@ export default function ListaComentario({
 
     try {
       const res = await axios.patch<ComentarioResponseDTO>(
-        `http://localhost:8080/api/comentario/${id}`,
+        `https://plf-es-2025-2-ti4-1254100-gestaoeduca.onrender.com/api/comentario/${id}`,
         {},
         auth
       );
