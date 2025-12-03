@@ -19,7 +19,7 @@ export default async function Projeto({ params }: PageProps) {
         const { id } = params;
         try {
             // Busca os projetos do cliente externo
-            const meusProjetosResponse = await fetch(`http://localhost:8080/api/v1/projetos/meus-projetos`, {
+            const meusProjetosResponse = await fetch(`https://plf-es-2025-2-ti4-1254100-gestaoeduca.onrender.com/api/v1/projetos/meus-projetos`, {
                 headers: {
                     "Authorization": token ? `Bearer ${token}` : "",
                     "Content-Type": "application/json",
